@@ -1,0 +1,266 @@
+
+.sec1{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-image: url(WhatsApp\ Image\ 2024-06-12\ at\ 18.50.03_f86f0056.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.writing{
+    font-size: x-large;
+    margin-left: 300px;
+    color:#F0EFF4 ;
+    padding-top: 4rem;
+    
+}
+
+.btn1{
+    width: 200px;
+    height: 45px;
+    border-radius: 10px;
+    background: #F0CF65;
+    border: none;
+    margin-top: 40px;
+    font-size: x-large;
+}
+
+/*sec2*/
+hr{
+    width: 102px;
+}
+h2{
+    margin-top: 2rem;
+}
+.grd1,.grd2,.grd3{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.sub1,.sub2,.sub3{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #F0CF65;
+    box-shadow: 0px 2px 2px 0px rgba(0,0,0,0.5);
+    width: 200px;
+    height: 150px;
+    margin-top: 40px;
+    border-radius: 10px;
+}
+.sub1:hover,.sub2:hover,.sub3:hover{
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.5);
+    transition: box-shadow 2s linear ease-out;
+}
+#ab1{
+    color: black;
+    text-decoration: none;
+}footer{
+    background-color: #3A3E3B;
+    height:max-content ;
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    color: white;
+}
+div p a{
+    color: white;
+    text-decoration: none;
+}
+@media(width<=600px){
+   
+    .navbar{
+        width: 100vw;
+    
+    }
+    #logo{
+        margin-left: 30px;
+        margin-right: 40px;
+        font-size: larger;
+    }
+    .sec1{
+        background-size:cover ;
+    }
+    .sec2 h2{
+        margin-top:20px;
+    }
+    li{
+        margin-right:20px;
+        margin-left: 20px;
+    }
+
+    .writing{
+        font-size: medium;
+        margin-left: 10px;
+        margin-top: 20px;
+    } 
+    .btn1{
+        width: 200px;
+    height: 40px;
+    font-size: large;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    }
+
+    .sub1,.sub2,.sub3{
+        width: 100px;
+    height: 75px;
+    gap: 10px;
+    }
+    footer{
+        width: auto;
+        height:auto;
+        margin-top:100%;
+    }
+ }
+ @media(600px<=width<768px){
+    .navbar{
+        width: auto;
+    height: 100px;
+    }
+    .nav-items li a{
+        font-size: x-large;
+    }
+    #logo{
+        margin-left: 30px;
+        margin-right: 40px;
+        font-size: xx-large;
+    }
+    li{
+        margin-right:50px;
+        margin-left: 50px;
+    }
+    .sec1{
+        background-size:contain ;
+    }
+    
+    .writing{
+        font-size: xx-large;
+        margin-left: 10px;
+        margin-top: 150px;
+    } 
+    .btn1{
+        width: 300px;
+    height: 60px;
+    font-size: xx-large;
+    margin-top: 30px;
+    margin-bottom: 500px;
+    }
+    .sec2{
+        margin-top: -26rem;
+    }
+    footer{
+        width: auto;
+        height:auto;
+        margin-top:100%;
+    }
+ }
+ @media(768px<=width<=992px){
+    .navbar{
+        width: auto;
+    
+    }
+    .nav-items li a{
+        font-size: x-large;
+    }
+    .sec1{
+        background-size:contain ;
+    }
+    #logo{
+        margin-left: 30px;
+        margin-right: 40px;
+        font-size: xx-large;
+    }
+    li{
+        margin-right:50px;
+        margin-left: 30px;
+    }
+    ul{
+        margin-left: 150px;
+    }
+    .writing{
+        font-size: xx-large;
+        margin-left: 30px;
+        margin-top: 200px;
+    } 
+    .btn1{
+        margin-bottom: 150px;
+    }
+    .sec2{
+        margin-top: -1rem;
+    }
+    footer{
+        width: auto;
+        height:auto;
+        margin-top:100%;
+    }
+ }
+ @media(992px<=width<=1200px){
+    .navbar{
+        width: auto;
+    }
+    .nav-items li a{
+        font-size: x-large;
+    }
+    #logo{
+        margin-left: 30px;
+        margin-right: 40px;
+        font-size: xx-large;
+    }
+   
+    ul{
+        margin-left: 150px;
+    }
+    li{
+        margin-right:50px;
+        margin-left: 30px;
+    }
+    .writing{
+        font-size: xx-large;
+        margin-left: 30px;
+        margin-top: 250px;
+    } 
+    .btn1{
+        margin-bottom: 150px;
+    }
+    footer{
+        width: auto;
+        height:auto;
+        margin-top:100%;
+    }
+}
+@media(width>=1200px){
+    .navbar{
+        width: auto;
+    }
+    .nav-items li a{
+        font-size: x-large;
+    }
+    #logo{
+        margin-left: 50px;
+        margin-right: 40px;
+        font-size: xx-large;
+    }
+    ul{
+        margin-left: 250px;
+    }
+    li{
+        margin-right:50px;
+        margin-left: 30px;
+    }
+    .writing{
+        font-size: xx-large;
+        margin-left: 50px;
+        margin-top: 250px;
+    } 
+    .btn1{
+        margin-bottom: 150px;
+    }
+    footer{
+        width: auto;
+        height:auto;
+        margin-top:100%;
+    }
+}
