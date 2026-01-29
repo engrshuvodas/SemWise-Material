@@ -302,8 +302,8 @@ html {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: floatIn 0.8s ease forwards;
     opacity: 0;
-    display: flex;
     height: 100%;
+    display: flex;
 }
 
 .material-box:nth-child(1) { animation-delay: 0.1s; }
@@ -331,23 +331,37 @@ html {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    min-height: 180px;
-    height: 180px;
+    height: 160px;
     width: 100%;
     background: linear-gradient(135deg, #F0CF65, #d9b33a);
     border-radius: 25px;
     text-decoration: none;
     color: #121212;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     box-shadow: 0 10px 30px rgba(240, 207, 101, 0.4);
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     transform-style: preserve-3d;
     position: relative;
     overflow: hidden;
-    padding: 1.5rem;
+    padding: 1rem;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.material-card h3 {
+    margin: 0.2rem 0;
+    font-size: 1.1rem;
+    line-height: 1.2;
+    text-align: center;
+}
+
+.material-card small {
+    font-size: 0.8rem;
+    margin-top: 0.3rem;
+    line-height: 1.1;
+    text-align: center;
+    display: block;
 }
 
 .material-card::before {
@@ -707,34 +721,32 @@ footer {
     }
 
     .material-box {
+        height: 160px;
         display: flex;
-        height: 100%;
     }
 
     .material-card {
-        min-height: 150px;
-        height: 150px;
+        height: 160px;
         width: 100%;
-        padding: 1rem;
+        padding: 0.8rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
         text-align: center;
+        font-size: 1rem;
     }
 
     .material-card h3 {
-        font-size: 1.1rem;
+        font-size: 1rem;
         margin: 0.2rem 0;
-        flex-shrink: 0;
-        line-height: 1.2;
+        line-height: 1.1;
     }
 
     .material-card small {
-        font-size: 0.75rem;
-        flex-shrink: 0;
-        margin-top: 0.3rem;
-        line-height: 1.1;
+        font-size: 0.7rem;
+        margin-top: 0.2rem;
+        line-height: 1;
     }
 
     .btn-group {
