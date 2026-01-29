@@ -698,8 +698,22 @@ footer {
 
     .materials {
         grid-template-columns: repeat(2, 1fr);
-        gap: 0.8rem;
-        padding: 1.5rem 0.8rem;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .material-card {
+        min-height: 140px;
+        padding: 1.5rem 1rem;
+    }
+
+    .material-card h3 {
+        font-size: 1.2rem;
+        margin: 0.3rem 0;
+    }
+
+    .material-card small {
+        font-size: 0.8rem;
     }
 
     .btn-group {
