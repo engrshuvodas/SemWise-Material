@@ -532,10 +532,14 @@ footer {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 3rem;
+    text-align: center;
 }
 
 .footer-section {
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .footer-section h3,
@@ -544,12 +548,14 @@ footer {
     margin-bottom: 1.5rem;
     font-weight: 700;
     font-size: 1.2rem;
+    text-align: center;
 }
 
 .footer-section p {
     color: #b0b0b0;
     line-height: 1.8;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .footer-section a {
@@ -565,6 +571,7 @@ footer {
 .footer-logo h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+    text-align: center;
 }
 
 .university-link {
@@ -586,12 +593,14 @@ footer {
 .footer-links-section ul {
     list-style: none;
     padding: 0;
+    text-align: center;
 }
 
 .footer-links-section li {
     margin-bottom: 0.8rem;
     padding-left: 1rem;
     position: relative;
+    text-align: center;
 }
 
 .footer-links-section li::before {
@@ -611,6 +620,7 @@ footer {
 
 .footer-bottom p {
     margin: 0;
+    text-align: center;
 }
 
 /* Back to Top Button */
