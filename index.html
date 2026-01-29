@@ -1,112 +1,349 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Material Website</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SemWise Material - Engineering Study Resources</title>
+    <meta name="description" content="Access comprehensive engineering study materials and resources for all semesters. Download notes, papers, and study guides." />
+    <meta name="keywords" content="engineering, materials, study resources, B.Tech, semester notes" />
+    <meta name="author" content="Engr Shuvo Das" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="SemWise Material - Engineering Study Resources" />
+    <meta property="og:description" content="Access comprehensive engineering study materials and resources for all semesters." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="#" />
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous" />
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-sm">
-    <div class="container">
-      <a class="navbar-brand fs-2 fw-bold" href="#">&#169;B.Tech</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse justify-content-center fs-5" id="navbarNav">
-        <ul class="navbar-nav gap-4">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Materials</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
-          </li>
-        </ul>
-      </div>
+    <!-- Loading Screen -->
+    <div class="loading-screen">
+        <div class="loading-spinner"></div>
     </div>
-  </nav>
 
-  <section class="sec1 d-flex align-items-center">
-    <div class="container">
-      <div class="writing text-white px-3 py-5">
-        <p class="fs-4 mb-1">Welcome to</p>
-        <h1 class="display-4 fw-bold mb-3">My Website..</h1>
-        <h2 class="mb-4">I am Engr Shuvo Das....!</h2>
-        <button class="btn btn-warning btn-lg rounded-pill">Let's Get Started...</button>
-      </div>
-    </div>
-  </section>
+    <!-- Enhanced Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#home">
+                <i class="fas fa-graduation-cap me-2"></i>SemWise
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav gap-3">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#home">
+                            <i class="fas fa-home me-1"></i>Home
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#materials">
+                            <i class="fas fa-book me-1"></i>Materials
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">
+                            <i class="fas fa-user me-1"></i>About
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="navbar-nav">
+                <a href="#" class="nav-link" onclick="toggleTheme()">
+                    <i class="fas fa-moon"></i>
+                </a>
+            </div>
+        </div>
+    </nav>
 
-  <section class="sec2 container my-5">
-    <h2 class="material-box-title text-center mb-4">Materials</h2>
-    <hr class="mx-auto mb-5" style="max-width: 200px;" />
+    <!-- Enhanced Hero Section -->
+    <section id="home" class="sec1" data-parallax="0.5">
+        <div class="particles"></div>
+        <div class="container">
+            <div class="writing" data-aos="fade-up">
+                <p class="fs-4 mb-3">
+                    <i class="fas fa-rocket me-2"></i>Welcome to
+                </p>
+                <h1 class="display-2 fw-bold mb-4 text-gradient">
+                    SemWise Material
+                </h1>
+                <h2 class="mb-4 fs-1">
+                    Engineering Study Resources by <span class="text-gradient">Engr Shuvo Das</span>
+                </h2>
+                <p class="lead mb-5">
+                    Access comprehensive study materials, notes, and resources for all engineering semesters
+                </p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <button class="btn btn-warning btn-lg rounded-pill" onclick="scrollToSection('materials')">
+                        <i class="fas fa-book-open me-2"></i>Explore Materials
+                    </button>
+                    <button class="btn btn-outline-light btn-lg rounded-pill" onclick="scrollToSection('about')">
+                        <i class="fas fa-info-circle me-2"></i>Learn More
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="materials">
-      <div class="material-box">
-        <a href="https://drive.google.com/drive/folders/18GORLn7PaG6Q3Fq9ayDjIpJ_AXehfeO0?usp=sharing"
-          class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-1</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="https://drive.google.com/drive/folders/1bgHzMODbkCboDjqmM0oODRPLMe_GRnNN?usp=sharing"
-          class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-2</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="https://drive.google.com/drive/folders/1AAZre3ENaaSPSHx2IHzTjOaNpuuGZRN8?usp=sharing"
-          class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-3</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="#" class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-4</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="#" class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-5</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="#" class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-6</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="#" class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-7</h3>
-        </a>
-      </div>
-      <div class="material-box">
-        <a href="#" class="material-card d-block text-decoration-none text-dark text-center py-5 rounded shadow">
-          <h3>Sem-8</h3>
-        </a>
-      </div>
-    </div>
-  </section>
+    <!-- Enhanced Materials Section -->
+    <section id="materials" class="sec2">
+        <div class="container">
+            <div class="text-center mb-5" data-aos="fade-up">
+                <h2 class="material-box-title">
+                    <i class="fas fa-layer-group me-3"></i>Study Materials
+                </h2>
+                <p class="lead text-secondary">
+                    Download comprehensive study resources for each semester
+                </p>
+                <hr class="mx-auto" />
+            </div>
 
-  <footer class="bg-dark text-light py-4 text-center">
-    <div class="mb-3">
-      <a href="#" class="text-light text-decoration-none me-4">Go to Top</a>
-      <a href="#" class="text-light text-decoration-none">About Us</a>
-    </div>
-    <p class="mb-1">Contact Me: +8801765245872</p>
-    <p class="mb-0">&#169;B.Tech</p>
-  </footer>
+            <div class="materials" data-aos="fade-up" data-aos-delay="200">
+                <div class="material-box stagger-1">
+                    <a href="https://drive.google.com/drive/folders/18GORLn7PaG6Q3Fq9ayDjIpJ_AXehfeO0?usp=sharing"
+                        class="material-card d-block text-decoration-none text-center" target="_blank">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 1</h3>
+                            <small>Foundation Courses</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-2">
+                    <a href="https://drive.google.com/drive/folders/1bgHzMODbkCboDjqmM0oODRPLMe_GRnNN?usp=sharing"
+                        class="material-card d-block text-decoration-none text-center" target="_blank">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 2</h3>
+                            <small>Basic Engineering</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-3">
+                    <a href="https://drive.google.com/drive/folders/1AAZre3ENaaSPSHx2IHzTjOaNpuuGZRN8?usp=sharing"
+                        class="material-card d-block text-decoration-none text-center" target="_blank">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 3</h3>
+                            <small>Core Subjects</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-4">
+                    <a href="#" class="material-card d-block text-decoration-none text-center">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 4</h3>
+                            <small>Coming Soon</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-5">
+                    <a href="#" class="material-card d-block text-decoration-none text-center">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 5</h3>
+                            <small>Coming Soon</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-6">
+                    <a href="#" class="material-card d-block text-decoration-none text-center">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 6</h3>
+                            <small>Coming Soon</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-7">
+                    <a href="#" class="material-card d-block text-decoration-none text-center">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 7</h3>
+                            <small>Coming Soon</small>
+                        </div>
+                    </a>
+                </div>
+                <div class="material-box stagger-8">
+                    <a href="#" class="material-card d-block text-decoration-none text-center">
+                        <div class="card-content">
+                            <i class="fas fa-book mb-3 fs-2"></i>
+                            <h3>Semester 8</h3>
+                            <small>Coming Soon</small>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!-- About Section -->
+    <section id="about" class="sec2 py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <h2 class="text-gradient mb-4">About SemWise Material</h2>
+                    <p class="lead mb-4">
+                        SemWise Material is a comprehensive platform designed to provide engineering students 
+                        with easy access to high-quality study materials, notes, and resources.
+                    </p>
+                    <div class="features-list">
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Comprehensive study materials for all semesters</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Easy download access to Google Drive resources</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Regularly updated content and materials</span>
+                        </div>
+                        <div class="feature-item mb-3">
+                            <i class="fas fa-check-circle text-warning me-2"></i>
+                            <span>Mobile-friendly responsive design</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-image text-center">
+                        <div class="floating-icon">
+                            <i class="fas fa-graduation-cap fs-1 text-warning"></i>
+                        </div>
+                        <h3 class="mt-4">Created by Engr Shuvo Das</h3>
+                        <p class="text-secondary">
+                            Dedicated to providing quality educational resources for engineering students
+                        </p>
+                        <div class="social-links mt-4">
+                            <a href="#" class="btn btn-outline-warning btn-sm me-2">
+                                <i class="fab fa-linkedin me-1"></i>LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-outline-warning btn-sm me-2">
+                                <i class="fab fa-github me-1"></i>GitHub
+                            </a>
+                            <a href="tel:+8801765245872" class="btn btn-outline-warning btn-sm">
+                                <i class="fas fa-phone me-1"></i>Contact
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Enhanced Footer -->
+    <footer class="bg-dark text-light py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <h5 class="text-gradient mb-3">
+                        <i class="fas fa-graduation-cap me-2"></i>SemWise Material
+                    </h5>
+                    <p class="text-secondary">
+                        Your comprehensive resource for engineering study materials and academic success.
+                    </p>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Quick Links</h5>
+                    <div class="d-flex flex-column gap-2">
+                        <a href="#home" class="text-light text-decoration-none">
+                            <i class="fas fa-chevron-right me-2 text-warning"></i>Home
+                        </a>
+                        <a href="#materials" class="text-light text-decoration-none">
+                            <i class="fas fa-chevron-right me-2 text-warning"></i>Materials
+                        </a>
+                        <a href="#about" class="text-light text-decoration-none">
+                            <i class="fas fa-chevron-right me-2 text-warning"></i>About
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <h5 class="mb-3">Contact Info</h5>
+                    <div class="contact-info">
+                        <p class="mb-2">
+                            <i class="fas fa-phone me-2 text-warning"></i>
+                            <a href="tel:+8801765245872" class="text-light text-decoration-none">
+                                +880 1765 245872
+                            </a>
+                        </p>
+                        <p class="mb-2">
+                            <i class="fas fa-envelope me-2 text-warning"></i>
+                            <a href="mailto:contact@example.com" class="text-light text-decoration-none">
+                                contact@example.com
+                            </a>
+                        </p>
+                        <div class="social-links mt-3">
+                            <a href="#" class="text-light me-3 fs-5">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="text-light me-3 fs-5">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="text-light me-3 fs-5">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="text-light fs-5">
+                                <i class="fab fa-linkedin"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr class="my-4 border-secondary" />
+            <div class="text-center">
+                <p class="mb-0 text-secondary">
+                    &copy; 2024 SemWise Material. All rights reserved. | 
+                    Designed with <i class="fas fa-heart text-danger"></i> by Engr Shuvo Das
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="btn btn-warning rounded-circle position-fixed bottom-0 end-0 m-4" 
+            style="display: none; z-index: 1000; width: 50px; height: 50px;">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script src="js/main.js"></script>
+    <script src="js/animation.js"></script>
+    
+    <!-- Initialize AOS -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 
 </html>

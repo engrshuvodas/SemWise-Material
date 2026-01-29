@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SemWise Material - Engineering Study Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #121212, #1e1e1e);
+            color: #F0EFF4;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Navbar */
+        .navbar {
+            background: rgba(35, 35, 35, 0.95);
+            backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(240, 207, 101, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(18, 18, 18, 0.98);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .navbar-brand {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: #F0CF65;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-brand:hover {
+            transform: scale(1.05);
+            text-shadow: 0 0 20px rgba(240, 207, 101, 0.5);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #F0EFF4;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+        }
+
+        .nav-links a:hover {
+            color: #F0CF65;
+            background: rgba(240, 207, 101, 0.1);
+            transform: translateY(-2px);
+        }
+
+        /* Hero Section */
+        .sec1 {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            background: linear-gradient(135deg, rgba(18, 18, 18, 0.9), rgba(30, 30, 30, 0.9)),
+                        url('WhatsApp Image 2024-06-12 at 18.50.03_f86f0056.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            overflow: hidden;
+        }
+
+        .sec1::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 20% 80%, rgba(240, 207, 101, 0.1) 0%, transparent 50%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .writing {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .writing p {
+            font-size: 1.5rem;
+            color: #b0b0b0;
+            margin-bottom: 1rem;
+            opacity: 0;
+            animation: slideInLeft 1s ease forwards;
+            animation-delay: 0.2s;
+        }
+
+        .writing h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+            opacity: 0;
+            animation: bounceIn 1.2s ease forwards;
+            animation-delay: 0.4s;
+        }
+
+        .writing h2 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #F0EFF4;
+            margin-bottom: 2.5rem;
+            opacity: 0;
+            animation: slideInRight 1s ease forwards;
+            animation-delay: 0.6s;
+        }
+
+        @keyframes slideInLeft {
+            from { opacity: 0; transform: translateX(-50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes slideInRight {
+            from { opacity: 0; transform: translateX(50px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { opacity: 0; transform: scale(0.3); }
+            50% { opacity: 1; transform: scale(1.05); }
+            70% { transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            opacity: 0;
+            animation: scaleIn 0.8s ease forwards;
+            animation-delay: 0.8s;
+        }
+
+        @keyframes scaleIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        .btn {
+            padding: 15px 30px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            border-radius: 50px;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            color: #121212;
+            box-shadow: 0 4px 15px rgba(240, 207, 101, 0.3);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 8px 25px rgba(240, 207, 101, 0.5);
+        }
+
+        .btn-secondary {
+            background: transparent;
+            color: #F0EFF4;
+            border: 2px solid #F0CF65;
+        }
+
+        .btn-secondary:hover {
+            background: #F0CF65;
+            color: #121212;
+            transform: translateY(-3px) scale(1.05);
+        }
+
+        /* Materials Section */
+        .sec2 {
+            background: linear-gradient(135deg, #1e1e1e, #232323);
+            padding: 6rem 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .sec2::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(240, 207, 101, 0.05) 0%, transparent 70%);
+            animation: morph 20s ease-in-out infinite;
+        }
+
+        @keyframes morph {
+            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+
+        .section-title p {
+            color: #b0b0b0;
+            font-size: 1.2rem;
+        }
+
+        .section-title hr {
+            border: none;
+            height: 3px;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            max-width: 200px;
+            margin: 1rem auto 0;
+            border-radius: 2px;
+            box-shadow: 0 0 20px rgba(240, 207, 101, 0.3);
+        }
+
+        .materials {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 3rem;
+            background: rgba(30, 30, 30, 0.6);
+            border-radius: 20px;
+            backdrop-filter: blur(10px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 2;
+        }
+
+        .material-box {
+            transform-style: preserve-3d;
+            transition: all 0.4s ease;
+        }
+
+        .material-card {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 150px;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            border-radius: 20px;
+            text-decoration: none;
+            color: #121212;
+            font-weight: 700;
+            font-size: 1.2rem;
+            box-shadow: 0 8px 20px rgba(240, 207, 101, 0.3);
+            transition: all 0.4s ease;
+            transform-style: preserve-3d;
+            position: relative;
+            overflow: hidden;
+            padding: 1.5rem;
+            text-align: center;
+        }
+
+        .material-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            transform: rotate(45deg);
+        }
+
+        .material-card:hover {
+            transform: translateZ(20px) rotateX(5deg) rotateY(5deg) scale(1.1);
+            box-shadow: 0 15px 35px rgba(240, 207, 101, 0.5);
+            color: #121212;
+        }
+
+        .material-card:hover::before {
+            opacity: 1;
+        }
+
+        .material-card h3 {
+            margin: 0.5rem 0;
+            font-size: 1.3rem;
+            font-weight: 800;
+        }
+
+        .material-card small {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* About Section */
+        .about-section {
+            background: linear-gradient(135deg, #1e1e1e, #232323);
+            padding: 4rem 2rem;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .about-text h2 {
+            font-size: 2rem;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: #b0b0b0;
+            margin-bottom: 1.5rem;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            color: #F0EFF4;
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #F0CF65;
+            font-weight: bold;
+        }
+
+        .about-image {
+            text-align: center;
+        }
+
+        .about-icon {
+            font-size: 4rem;
+            color: #F0CF65;
+            margin-bottom: 1rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .social-links {
+            margin-top: 2rem;
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(135deg, rgba(35, 35, 35, 0.95), rgba(18, 18, 18, 0.95));
+            padding: 3rem 2rem 2rem;
+            border-top: 1px solid rgba(240, 207, 101, 0.2);
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h5 {
+            color: #F0CF65;
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+
+        .footer-section p {
+            color: #b0b0b0;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a {
+            color: #b0b0b0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-section a:hover {
+            color: #F0CF65;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(240, 207, 101, 0.2);
+            color: #b0b0b0;
+        }
+
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #F0CF65, #d9b33a);
+            color: #121212;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(240, 207, 101, 0.3);
+        }
+
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-3px) scale(1.1);
+            box-shadow: 0 8px 25px rgba(240, 207, 101, 0.5);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+
+            .writing h1 {
+                font-size: 2.5rem;
+            }
+
+            .writing h2 {
+                font-size: 1.5rem;
+            }
+
+            .materials {
+                grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 1rem;
+                padding: 2rem 1rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .footer-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .writing h1 {
+                font-size: 2rem;
+            }
+
+            .materials {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .btn-group {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="#home" class="navbar-brand">🎓 SemWise</a>
+            <ul class="nav-links">
+                <li><a href="#home">🏠 Home</a></li>
+                <li><a href="#materials">📚 Materials</a></li>
+                <li><a href="#about">👤 About</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="sec1">
+        <div class="container">
+            <div class="writing">
+                <p>🚀 Welcome to</p>
+                <h1>SemWise Material</h1>
+                <h2>Engineering Study Resources by <span style="color: #F0CF65;">Engr Shuvo Das</span></h2>
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">
+                    Access comprehensive study materials, notes, and resources for all engineering semesters
+                </p>
+                <div class="btn-group">
+                    <a href="#materials" class="btn btn-primary">📖 Explore Materials</a>
+                    <a href="#about" class="btn btn-secondary">ℹ️ Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Materials Section -->
+    <section id="materials" class="sec2">
+        <div class="container">
+            <div class="section-title">
+                <h2>📚 Study Materials</h2>
+                <p>Download comprehensive study resources for each semester</p>
+                <hr>
+            </div>
+
+            <div class="materials">
+                <div class="material-box">
+                    <a href="https://drive.google.com/drive/folders/18GORLn7PaG6Q3Fq9ayDjIpJ_AXehfeO0?usp=sharing"
+                       class="material-card" target="_blank">
+                        <h3>📖 Semester 1</h3>
+                        <small>Foundation Courses</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="https://drive.google.com/drive/folders/1bgHzMODbkCboDjqmM0oODRPLMe_GRnNN?usp=sharing"
+                       class="material-card" target="_blank">
+                        <h3>📖 Semester 2</h3>
+                        <small>Basic Engineering</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="https://drive.google.com/drive/folders/1AAZre3ENaaSPSHx2IHzTjOaNpuuGZRN8?usp=sharing"
+                       class="material-card" target="_blank">
+                        <h3>📖 Semester 3</h3>
+                        <small>Core Subjects</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="#" class="material-card">
+                        <h3>📖 Semester 4</h3>
+                        <small>Coming Soon</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="#" class="material-card">
+                        <h3>📖 Semester 5</h3>
+                        <small>Coming Soon</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="#" class="material-card">
+                        <h3>📖 Semester 6</h3>
+                        <small>Coming Soon</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="#" class="material-card">
+                        <h3>📖 Semester 7</h3>
+                        <small>Coming Soon</small>
+                    </a>
+                </div>
+                <div class="material-box">
+                    <a href="#" class="material-card">
+                        <h3>📖 Semester 8</h3>
+                        <small>Coming Soon</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about-section">
+        <div class="container">
+            <div class="about-content">
+                <div class="about-text">
+                    <h2>About SemWise Material</h2>
+                    <p>
+                        SemWise Material is a comprehensive platform designed to provide engineering students 
+                        with easy access to high-quality study materials, notes, and resources.
+                    </p>
+                    <ul class="feature-list">
+                        <li>Comprehensive study materials for all semesters</li>
+                        <li>Easy download access to Google Drive resources</li>
+                        <li>Regularly updated content and materials</li>
+                        <li>Mobile-friendly responsive design</li>
+                    </ul>
+                </div>
+                <div class="about-image">
+                    <div class="about-icon">🎓</div>
+                    <h3>Created by Engr Shuvo Das</h3>
+                    <p style="color: #b0b0b0;">
+                        Dedicated to providing quality educational resources for engineering students
+                    </p>
+                    <div class="social-links">
+                        <a href="#" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
+                            💼 LinkedIn
+                        </a>
+                        <a href="#" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
+                            💻 GitHub
+                        </a>
+                        <a href="tel:+8801765245872" class="btn btn-primary" style="padding: 8px 16px; font-size: 0.9rem;">
+                            📞 Contact
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h5>🎓 SemWise Material</h5>
+                <p>Your comprehensive resource for engineering study materials and academic success.</p>
+            </div>
+            <div class="footer-section">
+                <h5>Quick Links</h5>
+                <a href="#home">🏠 Home</a>
+                <a href="#materials">📚 Materials</a>
+                <a href="#about">👤 About</a>
+            </div>
+            <div class="footer-section">
+                <h5>Contact Info</h5>
+                <p>📞 <a href="tel:+8801765245872" style="color: #F0CF65;">+880 1765 245872</a></p>
+                <p>📧 <a href="mailto:contact@example.com" style="color: #F0CF65;">contact@example.com</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2024 SemWise Material. All rights reserved. | Made with ❤️ by Engr Shuvo Das</p>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            const backToTop = document.getElementById('backToTop');
+            
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+                backToTop.classList.add('show');
+            } else {
+                navbar.classList.remove('scrolled');
+                backToTop.classList.remove('show');
+            }
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Back to top function
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+
+        // Add entrance animations on scroll
+        function animateOnScroll() {
+            const elements = document.querySelectorAll('.material-box, .about-text, .about-image');
+            
+            elements.forEach(element => {
+                const rect = element.getBoundingClientRect();
+                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+                
+                if (isVisible && !element.classList.contains('animated')) {
+                    element.classList.add('animated');
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                }
+            });
+        }
+
+        // Initialize animations
+        window.addEventListener('scroll', animateOnScroll);
+        window.addEventListener('load', animateOnScroll);
+
+        // Set initial state for animation
+        document.addEventListener('DOMContentLoaded', function() {
+            const elements = document.querySelectorAll('.material-box, .about-text, .about-image');
+            elements.forEach(element => {
+                element.style.opacity = '0';
+                element.style.transform = 'translateY(30px)';
+                element.style.transition = 'all 0.6s ease';
+            });
+        });
+
+        // Add hover effect to material cards
+        document.querySelectorAll('.material-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateZ(20px) rotateX(5deg) rotateY(5deg) scale(1.1)';
+            });
+            
+            card.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateZ(0) rotateX(0) rotateY(0) scale(1)';
+            });
+        });
+
+        // Add loading animation
+        window.addEventListener('load', function() {
+            document.body.style.opacity = '0';
+            setTimeout(() => {
+                document.body.style.transition = 'opacity 0.5s ease';
+                document.body.style.opacity = '1';
+            }, 100);
+        });
+    </script>
+</body>
+</html>

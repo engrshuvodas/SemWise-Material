@@ -1,0 +1,396 @@
+/* Responsive Design for All Screen Sizes */
+
+/* Extra Large Screens (1400px and up) */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .writing h1 {
+        font-size: 4.5rem;
+    }
+    
+    .writing h2 {
+        font-size: 3rem;
+    }
+    
+    .materials {
+        max-width: 1200px;
+        gap: 40px;
+    }
+    
+    .material-box {
+        width: 180px;
+        height: 180px;
+        font-size: 2rem;
+    }
+}
+
+/* Large Screens (1200px to 1399px) */
+@media (min-width: 1200px) and (max-width: 1399px) {
+    .writing h1 {
+        font-size: 4rem;
+    }
+    
+    .materials {
+        max-width: 1000px;
+        gap: 35px;
+    }
+    
+    .material-box {
+        width: 160px;
+        height: 160px;
+        font-size: 1.8rem;
+    }
+}
+
+/* Medium Large Screens (992px to 1199px) */
+@media (min-width: 992px) and (max-width: 1199px) {
+    .writing h1 {
+        font-size: 3.5rem;
+    }
+    
+    .materials {
+        max-width: 900px;
+        gap: 30px;
+    }
+    
+    .material-box {
+        width: 150px;
+        height: 150px;
+        font-size: 1.7rem;
+    }
+}
+
+/* Tablets (768px to 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    .sec1 {
+        height: 60vh;
+        min-height: 500px;
+    }
+    
+    .writing {
+        text-align: center;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+    
+    .writing h1 {
+        font-size: 3rem;
+    }
+    
+    .writing h2 {
+        font-size: 2rem;
+    }
+    
+    .materials {
+        max-width: 700px;
+        gap: 25px;
+        padding: 2rem;
+    }
+    
+    .material-box {
+        width: 140px;
+        height: 140px;
+        font-size: 1.6rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.5rem !important;
+    }
+    
+    .navbar-nav {
+        font-size: 1rem !important;
+    }
+}
+
+/* Small Tablets (576px to 767px) */
+@media (min-width: 576px) and (max-width: 767px) {
+    .sec1 {
+        height: 50vh;
+        min-height: 400px;
+        padding: 2rem 1rem;
+    }
+    
+    .writing {
+        text-align: center;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+    
+    .writing h1 {
+        font-size: 2.5rem;
+    }
+    
+    .writing h2 {
+        font-size: 1.8rem;
+    }
+    
+    .writing p {
+        font-size: 1.1rem;
+    }
+    
+    .btn-lg {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+    
+    .materials {
+        max-width: 500px;
+        gap: 20px;
+        padding: 1.5rem;
+    }
+    
+    .material-box {
+        width: 120px;
+        height: 120px;
+        font-size: 1.4rem;
+    }
+    
+    .sec2 {
+        padding: 3rem 1rem;
+    }
+    
+    .sec2 h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Large Mobile (480px to 575px) */
+@media (min-width: 480px) and (max-width: 575px) {
+    .sec1 {
+        height: 50vh;
+        min-height: 350px;
+        padding: 1.5rem;
+    }
+    
+    .writing {
+        text-align: center;
+        padding: 1rem;
+    }
+    
+    .writing h1 {
+        font-size: 2.2rem;
+    }
+    
+    .writing h2 {
+        font-size: 1.5rem;
+    }
+    
+    .writing p {
+        font-size: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+    
+    .materials {
+        gap: 15px;
+        padding: 1rem;
+    }
+    
+    .material-box {
+        width: 100px;
+        height: 100px;
+        font-size: 1.2rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.3rem !important;
+    }
+    
+    .sec2 h2 {
+        font-size: 1.8rem;
+    }
+}
+
+/* Small Mobile (320px to 479px) */
+@media (max-width: 479px) {
+    .sec1 {
+        height: 50vh;
+        min-height: 300px;
+        padding: 1rem;
+    }
+    
+    .writing {
+        text-align: center;
+        padding: 0.5rem;
+    }
+    
+    .writing h1 {
+        font-size: 1.8rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .writing h2 {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+    }
+    
+    .writing p {
+        font-size: 0.9rem;
+        margin-bottom: 1.5rem;
+    }
+    
+    .btn-lg {
+        padding: 8px 16px;
+        font-size: 0.8rem;
+    }
+    
+    .materials {
+        gap: 12px;
+        padding: 0.8rem;
+    }
+    
+    .material-box {
+        width: 85px;
+        height: 85px;
+        font-size: 1rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem !important;
+    }
+    
+    .sec2 {
+        padding: 2rem 0.5rem;
+    }
+    
+    .sec2 h2 {
+        font-size: 1.5rem;
+    }
+    
+    footer {
+        padding: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    footer p {
+        font-size: 0.8rem;
+    }
+}
+
+/* Ultra Small Mobile (up to 319px) */
+@media (max-width: 319px) {
+    .writing h1 {
+        font-size: 1.5rem;
+    }
+    
+    .writing h2 {
+        font-size: 1.1rem;
+    }
+    
+    .writing p {
+        font-size: 0.8rem;
+    }
+    
+    .btn-lg {
+        padding: 6px 12px;
+        font-size: 0.7rem;
+    }
+    
+    .materials {
+        gap: 10px;
+        padding: 0.5rem;
+    }
+    
+    .material-box {
+        width: 70px;
+        height: 70px;
+        font-size: 0.9rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1rem !important;
+    }
+    
+    .sec2 h2 {
+        font-size: 1.3rem;
+    }
+}
+
+/* Landscape Orientation Adjustments */
+@media (max-height: 500px) and (orientation: landscape) {
+    .sec1 {
+        height: 70vh;
+        min-height: 300px;
+    }
+    
+    .writing {
+        padding: 1rem;
+    }
+    
+    .writing h1 {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .writing h2 {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .btn-lg {
+        padding: 8px 16px;
+        font-size: 0.9rem;
+    }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .material-box {
+        border-width: 0.5px;
+    }
+    
+    .navbar {
+        border-width: 0.5px;
+    }
+}
+
+/* Touch Device Optimizations */
+@media (hover: none) and (pointer: coarse) {
+    .material-box:hover {
+        transform: scale(1.05);
+    }
+    
+    .hover-3d:hover {
+        transform: none;
+    }
+    
+    .btn-lg {
+        min-height: 44px;
+        min-width: 44px;
+    }
+    
+    .material-box {
+        min-height: 44px;
+        min-width: 44px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    .navbar,
+    footer,
+    .cursor,
+    .cursor-follower {
+        display: none;
+    }
+    
+    .sec1 {
+        height: auto;
+        background: none;
+        color: black;
+    }
+    
+    .writing {
+        color: black;
+    }
+    
+    .materials {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+}

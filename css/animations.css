@@ -1,0 +1,172 @@
+/* Modern Animations & 3D Effects */
+
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+/* CSS Variables for Consistent Theme */
+:root {
+    --primary-color: #F0CF65;
+    --secondary-color: #d9b33a;
+    --dark-bg: #121212;
+    --card-bg: #1e1e1e;
+    --text-primary: #F0EFF4;
+    --text-secondary: #b0b0b0;
+    --accent-gradient: linear-gradient(135deg, #F0CF65, #d9b33a);
+    --shadow-3d: 0 20px 40px rgba(0, 0, 0, 0.3);
+    --shadow-glow: 0 0 30px rgba(240, 207, 101, 0.3);
+}
+
+/* Global 3D Perspective */
+* {
+    perspective: 1000px;
+}
+
+/* Smooth Scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom Cursor */
+.cursor {
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: all 0.1s ease;
+    transform: translate(-50%, -50%);
+}
+
+.cursor-follower {
+    width: 40px;
+    height: 40px;
+    background: rgba(240, 207, 101, 0.1);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transition: all 0.3s ease;
+    transform: translate(-50%, -50%);
+}
+
+/* Floating Animation */
+@keyframes float {
+    0%, 100% { transform: translateY(0px) rotateX(0deg); }
+    50% { transform: translateY(-20px) rotateX(5deg); }
+}
+
+/* 3D Card Flip Animation */
+@keyframes flip3d {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Morphing Background */
+@keyframes morph {
+    0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+}
+
+/* Particle Animation */
+@keyframes particle {
+    0% { transform: translateY(100vh) rotate(0deg); opacity: 0; }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% { transform: translateY(-100vh) rotate(720deg); opacity: 0; }
+}
+
+/* Glow Pulse */
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 20px rgba(240, 207, 101, 0.5); }
+    50% { box-shadow: 0 0 40px rgba(240, 207, 101, 0.8), 0 0 60px rgba(240, 207, 101, 0.4); }
+}
+
+/* Slide In From Left */
+@keyframes slideInLeft {
+    0% { transform: translateX(-100px) rotateY(-15deg); opacity: 0; }
+    100% { transform: translateX(0) rotateY(0deg); opacity: 1; }
+}
+
+/* Slide In From Right */
+@keyframes slideInRight {
+    0% { transform: translateX(100px) rotateY(15deg); opacity: 0; }
+    100% { transform: translateX(0) rotateY(0deg); opacity: 1; }
+}
+
+/* Scale In */
+@keyframes scaleIn {
+    0% { transform: scale(0.8) rotateX(10deg); opacity: 0; }
+    100% { transform: scale(1) rotateX(0deg); opacity: 1; }
+}
+
+/* Bounce In */
+@keyframes bounceIn {
+    0% { transform: scale(0.3) rotateZ(-10deg); opacity: 0; }
+    50% { transform: scale(1.05) rotateZ(5deg); }
+    70% { transform: scale(0.9) rotateZ(-2deg); }
+    100% { transform: scale(1) rotateZ(0deg); opacity: 1; }
+}
+
+/* Text Gradient Animation */
+@keyframes gradient {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Parallax Layers */
+.parallax-layer {
+    position: absolute;
+    width: 110%;
+    height: 110%;
+    top: -5%;
+    left: -5%;
+}
+
+/* Loading Animation */
+@keyframes loading {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Hover 3D Effects */
+.hover-3d {
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+.hover-3d:hover {
+    transform: translateZ(20px) rotateX(5deg) rotateY(5deg);
+}
+
+/* Staggered Animation Delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+.stagger-6 { animation-delay: 0.6s; }
+.stagger-7 { animation-delay: 0.7s; }
+.stagger-8 { animation-delay: 0.8s; }
+
+/* Responsive Animation Adjustments */
+@media (max-width: 768px) {
+    .cursor, .cursor-follower {
+        display: none;
+    }
+    
+    .hover-3d:hover {
+        transform: translateZ(10px) rotateX(2deg) rotateY(2deg);
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
