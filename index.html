@@ -518,50 +518,132 @@
             flex-wrap: wrap;
         }
 
-        /* Footer */
+        /* Simple Footer - Matching Main Page Style */
         footer {
-            background: linear-gradient(135deg, rgba(35, 35, 35, 0.95), rgba(18, 18, 18, 0.95));
-            padding: 3rem 2rem 2rem;
+            background: linear-gradient(135deg, rgba(35, 35, 35, 0.95), rgba(18, 18, 18, 0.98));
+            color: #b0b0b0;
+            padding: 60px 30px 20px;
+            margin-top: 4rem;
             border-top: 1px solid rgba(240, 207, 101, 0.2);
         }
 
+        .footer-top {
+            border-bottom: 1px solid rgba(240, 207, 101, 0.2);
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+
         .footer-content {
-            max-width: 1200px;
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+            max-width: 600px;
             margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
         }
 
-        .footer-section h5 {
+        .footer-brand {
+            margin-top: 10px;
+        }
+
+        .footer-brand h3 {
             color: #F0CF65;
-            margin-bottom: 1rem;
+            margin: 0;
             font-size: 1.2rem;
+            font-weight: 700;
         }
 
-        .footer-section p {
-            color: #b0b0b0;
-            margin-bottom: 0.5rem;
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
         }
 
-        .footer-section a {
+        .footer-column h4 {
+            margin: 0 0 10px 0;
+            font-size: 16px;
+            font-weight: 600;
+            color: #F0CF65;
+        }
+
+        .footer-column a {
+            display: block;
             color: #b0b0b0;
             text-decoration: none;
+            margin-bottom: 8px;
             transition: color 0.3s ease;
-            display: block;
-            margin-bottom: 0.5rem;
         }
 
-        .footer-section a:hover {
+        .footer-column a:hover {
             color: #F0CF65;
         }
 
         .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid rgba(240, 207, 101, 0.2);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .footer-legal {
+            font-size: 12px;
+        }
+
+        .footer-legal span {
+            margin-right: 10px;
+        }
+
+        .footer-legal a {
             color: #b0b0b0;
+            text-decoration: none;
+            margin: 0 4px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-legal a:hover {
+            color: #F0CF65;
+        }
+
+        .footer-social {
+            display: flex;
+            gap: 18px;
+        }
+
+        .footer-social a {
+            color: #b0b0b0;
+            font-size: 20px;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-social a:hover {
+            color: #F0CF65;
+        }
+
+        /* Responsive Footer */
+        @media (max-width: 620px) {
+            .footer-content {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .footer-bottom {
+                flex-direction: column;
+                gap: 16px;
+                text-align: center;
+            }
+
+            .footer-legal span {
+                display: block;
+                margin-right: 0;
+                margin-bottom: 2px;
+            }
         }
 
         /* Back to Top Button */
@@ -793,28 +875,47 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Simple Footer - Matching Main Page Style -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h5>🎓 SemWise Material</h5>
-                <p>Your comprehensive resource for engineering study materials and academic success.</p>
-            </div>
-            <div class="footer-section">
-                <h5>Quick Links</h5>
-                <a href="#home">🏠 Home</a>
-                <a href="#materials">📚 Materials</a>
-                <a href="#about">👤 About</a>
-            </div>
-            <div class="footer-section">
-                <h5>Contact Info</h5>
-                <p>📞 <a href="tel:+8801765245872" style="color: #F0CF65;">+880 1765-245872</a></p>
-                <p>📧 <a href="mailto:engrshuvoda@gmail.com" style="color: #F0CF65;">engrshuvoda@gmail.com</a></p>
-                <p>🌐 <a href="https://www.linkedin.com/in/engr-shuvo-das-a28085260/" target="_blank" style="color: #F0CF65;">LinkedIn Profile</a></p>
+        <div class="footer-top">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <h3>🎓 SemWise Material</h3>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Project Details</h4>
+                        <a href="#home">Engineering Resources</a>
+                        <a href="#materials">8 Semesters</a>
+                        <a href="#about">Study Materials</a>
+                        <a href="https://www.fiverr.com/shuvo_das74886" target="_blank">Services</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Social Links</h4>
+                        <a href="https://www.linkedin.com/in/engr-shuvo-das-a28085260/" target="_blank">LinkedIn</a>
+                        <a href="https://github.com/engrshuvodas" target="_blank">GitHub</a>
+                        <a href="https://wa.me/+8801765245872" target="_blank">WhatsApp</a>
+                        <a href="https://www.facebook.com/engr.shuvo74886/" target="_blank">Facebook</a>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2024 SemWise Material. All rights reserved. | Made with ❤️ by Engr Shuvo Das</p>
+            <div class="footer-legal">
+                <span>&copy; 2024 SemWise Material</span>
+                <a href="#">Privacy</a>
+                <a href="#">Terms</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/engr-shuvo-das-a28085260/" target="_blank">💼</a>
+                <a href="https://github.com/engrshuvodas" target="_blank">💻</a>
+                <a href="https://wa.me/+8801765245872" target="_blank">📞</a>
+            </div>
+        </div>
+        <div style="text-align: center; margin-top: 15px; padding-top: 15px; border-top: 1px solid rgba(240, 207, 101, 0.2);">
+            <p style="color: #b0b0b0; font-size: 14px;">
+                Made by <a href="https://github.com/engrshuvodas" target="_blank" style="color: #F0CF65; text-decoration: none;">Engr Shuvo Das</a>
+            </p>
         </div>
     </footer>
 
