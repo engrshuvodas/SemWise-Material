@@ -302,6 +302,8 @@ html {
     transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     animation: floatIn 0.8s ease forwards;
     opacity: 0;
+    display: flex;
+    height: 100%;
 }
 
 .material-box:nth-child(1) { animation-delay: 0.1s; }
@@ -330,6 +332,8 @@ html {
     align-items: center;
     justify-content: center;
     min-height: 180px;
+    height: 180px;
+    width: 100%;
     background: linear-gradient(135deg, #F0CF65, #d9b33a);
     border-radius: 25px;
     text-decoration: none;
@@ -341,7 +345,7 @@ html {
     transform-style: preserve-3d;
     position: relative;
     overflow: hidden;
-    padding: 2rem 1.5rem;
+    padding: 1.5rem;
     text-align: center;
     border: 2px solid rgba(255, 255, 255, 0.1);
 }
@@ -704,12 +708,14 @@ footer {
 
     .material-box {
         display: flex;
+        height: 100%;
     }
 
     .material-card {
-        min-height: 160px;
-        height: 160px;
-        padding: 1.5rem 1rem;
+        min-height: 150px;
+        height: 150px;
+        width: 100%;
+        padding: 1rem;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -718,15 +724,17 @@ footer {
     }
 
     .material-card h3 {
-        font-size: 1.2rem;
-        margin: 0.3rem 0;
+        font-size: 1.1rem;
+        margin: 0.2rem 0;
         flex-shrink: 0;
+        line-height: 1.2;
     }
 
     .material-card small {
-        font-size: 0.8rem;
+        font-size: 0.75rem;
         flex-shrink: 0;
-        margin-top: 0.5rem;
+        margin-top: 0.3rem;
+        line-height: 1.1;
     }
 
     .btn-group {
