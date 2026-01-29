@@ -3,796 +3,18 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SemWise Material - Engineering Study Resources</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #121212, #1e1e1e);
-            color: #F0EFF4;
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        /* Smooth Scrolling */
-        html {
-            scroll-behavior: smooth;
-        }
-
-        /* Navbar */
-        .navbar {
-            background: rgba(35, 35, 35, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            z-index: 1000;
-            border-bottom: 1px solid rgba(240, 207, 101, 0.2);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            background: rgba(18, 18, 18, 0.98);
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .navbar-brand {
-            font-size: 1.8rem;
-            font-weight: 800;
-            color: #F0CF65;
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-brand:hover {
-            transform: scale(1.05);
-            text-shadow: 0 0 20px rgba(240, 207, 101, 0.5);
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            color: #F0EFF4;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            padding: 0.5rem 1rem;
-            border-radius: 8px;
-        }
-
-        .nav-links a:hover {
-            color: #F0CF65;
-            background: rgba(240, 207, 101, 0.1);
-            transform: translateY(-2px);
-        }
-
-        /* Hero Section */
-        .sec1 {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            position: relative;
-            background: linear-gradient(135deg, rgba(18, 18, 18, 0.8), rgba(30, 30, 30, 0.9)),
-                        url('https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            overflow: hidden;
-        }
-
-        .sec1::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle at 20% 80%, rgba(240, 207, 101, 0.1) 0%, transparent 50%);
-            animation: float 6s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .writing {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        .writing p {
-            font-size: 1.5rem;
-            color: #b0b0b0;
-            margin-bottom: 1rem;
-            opacity: 0;
-            animation: slideInLeft 1s ease forwards;
-            animation-delay: 0.2s;
-        }
-
-        .writing h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-            opacity: 0;
-            animation: bounceIn 1.2s ease forwards;
-            animation-delay: 0.4s;
-        }
-
-        .writing h2 {
-            font-size: 2rem;
-            font-weight: 600;
-            color: #F0EFF4;
-            margin-bottom: 2.5rem;
-            opacity: 0;
-            animation: slideInRight 1s ease forwards;
-            animation-delay: 0.6s;
-        }
-
-        @keyframes slideInLeft {
-            from { opacity: 0; transform: translateX(-50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes slideInRight {
-            from { opacity: 0; transform: translateX(50px); }
-            to { opacity: 1; transform: translateX(0); }
-        }
-
-        @keyframes bounceIn {
-            0% { opacity: 0; transform: scale(0.3); }
-            50% { opacity: 1; transform: scale(1.05); }
-            70% { transform: scale(0.9); }
-            100% { opacity: 1; transform: scale(1); }
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-            opacity: 0;
-            animation: scaleIn 0.8s ease forwards;
-            animation-delay: 0.8s;
-        }
-
-        @keyframes scaleIn {
-            from { opacity: 0; transform: scale(0.8); }
-            to { opacity: 1; transform: scale(1); }
-        }
-
-        .btn {
-            padding: 15px 30px;
-            font-size: 1.1rem;
-            font-weight: 600;
-            border-radius: 50px;
-            text-decoration: none;
-            display: inline-block;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary {
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            color: #121212;
-            box-shadow: 0 4px 15px rgba(240, 207, 101, 0.3);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(240, 207, 101, 0.5);
-        }
-
-        .btn-secondary {
-            background: transparent;
-            color: #F0EFF4;
-            border: 2px solid #F0CF65;
-        }
-
-        .btn-secondary:hover {
-            background: #F0CF65;
-            color: #121212;
-            transform: translateY(-3px) scale(1.05);
-        }
-
-        /* Materials Section */
-        .sec2 {
-            background: linear-gradient(135deg, #1e1e1e, #232323);
-            padding: 6rem 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .sec2::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(240, 207, 101, 0.05) 0%, transparent 70%);
-            animation: morph 20s ease-in-out infinite;
-        }
-
-        @keyframes morph {
-            0%, 100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
-            50% { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            z-index: 2;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1rem;
-        }
-
-        .section-title p {
-            color: #b0b0b0;
-            font-size: 1.2rem;
-        }
-
-        .section-title hr {
-            border: none;
-            height: 3px;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            max-width: 200px;
-            margin: 1rem auto 0;
-            border-radius: 2px;
-            box-shadow: 0 0 20px rgba(240, 207, 101, 0.3);
-        }
-
-        .materials {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 1.5rem;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 3rem;
-            background: rgba(30, 30, 30, 0.7);
-            border-radius: 25px;
-            backdrop-filter: blur(15px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-            position: relative;
-            z-index: 2;
-            transform-style: preserve-3d;
-            perspective: 1000px;
-        }
-
-        .material-box {
-            transform-style: preserve-3d;
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            animation: floatIn 0.8s ease forwards;
-            opacity: 0;
-        }
-
-        .material-box:nth-child(1) { animation-delay: 0.1s; }
-        .material-box:nth-child(2) { animation-delay: 0.2s; }
-        .material-box:nth-child(3) { animation-delay: 0.3s; }
-        .material-box:nth-child(4) { animation-delay: 0.4s; }
-        .material-box:nth-child(5) { animation-delay: 0.5s; }
-        .material-box:nth-child(6) { animation-delay: 0.6s; }
-        .material-box:nth-child(7) { animation-delay: 0.7s; }
-        .material-box:nth-child(8) { animation-delay: 0.8s; }
-
-        @keyframes floatIn {
-            from {
-                opacity: 0;
-                transform: translateY(50px) rotateX(-15deg) scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0) rotateX(0) scale(1);
-            }
-        }
-
-        .material-card {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 180px;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            border-radius: 25px;
-            text-decoration: none;
-            color: #121212;
-            font-weight: 700;
-            font-size: 1.3rem;
-            box-shadow: 0 10px 30px rgba(240, 207, 101, 0.4);
-            transition: all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-            transform-style: preserve-3d;
-            position: relative;
-            overflow: hidden;
-            padding: 2rem 1.5rem;
-            text-align: center;
-            border: 2px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .material-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.6s ease;
-            transform: rotate(45deg);
-            pointer-events: none;
-        }
-
-        .material-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
-            transform: translateX(-100%);
-            transition: transform 0.8s ease;
-            pointer-events: none;
-        }
-
-        .material-card:hover {
-            transform: translateZ(30px) rotateX(10deg) rotateY(10deg) scale(1.15);
-            box-shadow: 0 20px 50px rgba(240, 207, 101, 0.6);
-            color: #121212;
-            border-color: rgba(255, 255, 255, 0.3);
-        }
-
-        .material-card:hover::before {
-            opacity: 1;
-        }
-
-        .material-card:hover::after {
-            transform: translateX(100%);
-        }
-
-        .material-card h3 {
-            margin: 0.5rem 0;
-            font-size: 1.4rem;
-            font-weight: 900;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-            z-index: 2;
-            position: relative;
-        }
-
-        .material-card small {
-            font-size: 0.9rem;
-            opacity: 0.9;
-            font-weight: 600;
-            z-index: 2;
-            position: relative;
-        }
-
-        /* Semester-specific colors */
-        .material-box:nth-child(1) .material-card {
-            background: linear-gradient(135deg, #FF6B6B, #FF8E53);
-        }
-        .material-box:nth-child(2) .material-card {
-            background: linear-gradient(135deg, #4ECDC4, #44A08D);
-        }
-        .material-box:nth-child(3) .material-card {
-            background: linear-gradient(135deg, #667EEA, #764BA2);
-        }
-        .material-box:nth-child(4) .material-card {
-            background: linear-gradient(135deg, #F093FB, #F5576C);
-        }
-        .material-box:nth-child(5) .material-card {
-            background: linear-gradient(135deg, #4FACFE, #00F2FE);
-        }
-        .material-box:nth-child(6) .material-card {
-            background: linear-gradient(135deg, #43E97B, #38F9D7);
-        }
-        .material-box:nth-child(7) .material-card {
-            background: linear-gradient(135deg, #FA709A, #FEE140);
-        }
-        .material-box:nth-child(8) .material-card {
-            background: linear-gradient(135deg, #30CFD0, #330867);
-        }
-
-        /* About Section */
-        .about-section {
-            background: linear-gradient(135deg, #1e1e1e, #232323);
-            padding: 4rem 2rem;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .about-text h2 {
-            font-size: 2rem;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            margin-bottom: 1.5rem;
-        }
-
-        .about-text p {
-            color: #b0b0b0;
-            margin-bottom: 1.5rem;
-            line-height: 1.8;
-        }
-
-        .feature-list {
-            list-style: none;
-        }
-
-        .feature-list li {
-            color: #F0EFF4;
-            margin-bottom: 1rem;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: #F0CF65;
-            font-weight: bold;
-        }
-
-        .about-image {
-            text-align: center;
-        }
-
-        .about-photo {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 4px solid #F0CF65;
-            box-shadow: 0 8px 25px rgba(240, 207, 101, 0.3);
-            margin-bottom: 1.5rem;
-            transition: all 0.3s ease;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translateY(0px); }
-            50% { transform: translateY(-10px); }
-        }
-
-        .about-photo:hover {
-            transform: scale(1.05);
-            box-shadow: 0 12px 35px rgba(240, 207, 101, 0.5);
-        }
-
-        .about-icon {
-            font-size: 4rem;
-            color: #F0CF65;
-            margin-bottom: 1rem;
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .social-links {
-            margin-top: 2rem;
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        /* New Footer Design - Based on Demo */
-        .new-footer {
-            background: linear-gradient(135deg, #121212, #1e1e1e);
-            color: #F0EFF4;
-            padding: 60px 0 20px;
-            margin-top: 4rem;
-            border-top: 2px solid rgba(240, 207, 101, 0.3);
-        }
-
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 3rem;
-        }
-
-        .footer-section {
-            position: relative;
-        }
-
-        .footer-section h3,
-        .footer-section h4 {
-            color: #F0CF65;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-
-        .footer-section p {
-            color: #b0b0b0;
-            line-height: 1.8;
-            margin-bottom: 1rem;
-        }
-
-        .footer-section a {
-            color: #b0b0b0;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-
-        .footer-section a:hover {
-            color: #F0CF65;
-        }
-
-        .footer-logo h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .university-link {
-            display: inline-block;
-            background: rgba(240, 207, 101, 0.1);
-            color: #F0CF65;
-            padding: 8px 16px;
-            border-radius: 5px;
-            margin-top: 1rem;
-            border: 1px solid rgba(240, 207, 101, 0.3);
-            transition: all 0.3s ease;
-        }
-
-        .university-link:hover {
-            background: rgba(240, 207, 101, 0.2);
-            transform: translateY(-2px);
-        }
-
-        .footer-links-section ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links-section li {
-            margin-bottom: 0.8rem;
-            padding-left: 1rem;
-            position: relative;
-        }
-
-        .footer-links-section li::before {
-            content: '▸';
-            position: absolute;
-            left: 0;
-            color: #F0CF65;
-        }
-
-        .newsletter-form {
-            display: flex;
-            margin-bottom: 1.5rem;
-        }
-
-        .newsletter-form input {
-            flex: 1;
-            padding: 12px;
-            border: 1px solid rgba(240, 207, 101, 0.3);
-            background: rgba(35, 35, 35, 0.5);
-            color: #F0EFF4;
-            border-radius: 5px 0 0 5px;
-            outline: none;
-        }
-
-        .newsletter-form input::placeholder {
-            color: #b0b0b0;
-        }
-
-        .newsletter-form button {
-            background: #F0CF65;
-            color: #121212;
-            border: none;
-            padding: 12px 20px;
-            border-radius: 0 5px 5px 0;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all 0.3s ease;
-        }
-
-        .newsletter-form button:hover {
-            background: #d9b33a;
-        }
-
-        .social-icons-new {
-            display: flex;
-            gap: 1rem;
-        }
-
-        .social-icons-new a {
-            width: 40px;
-            height: 40px;
-            background: rgba(240, 207, 101, 0.1);
-            border: 1px solid rgba(240, 207, 101, 0.3);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-
-        .social-icons-new a:hover {
-            background: #F0CF65;
-            color: #121212;
-            transform: translateY(-3px);
-        }
-
-        .footer-bottom-new {
-            text-align: center;
-            padding: 2rem 0 0;
-            border-top: 1px solid rgba(240, 207, 101, 0.2);
-            margin-top: 3rem;
-            color: #b0b0b0;
-        }
-
-        .footer-bottom-new p {
-            margin: 0;
-        }
-
-        /* Responsive Footer */
-        @media (max-width: 768px) {
-            .footer-container {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-                padding: 0 1rem;
-            }
-
-            .newsletter-form {
-                flex-direction: column;
-            }
-
-            .newsletter-form input,
-            .newsletter-form button {
-                border-radius: 5px;
-            }
-        }
-
-        /* Back to Top Button */
-        .back-to-top {
-            position: fixed;
-            bottom: 2rem;
-            right: 2rem;
-            background: linear-gradient(135deg, #F0CF65, #d9b33a);
-            color: #121212;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            font-size: 1.2rem;
-            cursor: pointer;
-            opacity: 0;
-            visibility: hidden;
-            transition: all 0.3s ease;
-            z-index: 1000;
-            box-shadow: 0 4px 15px rgba(240, 207, 101, 0.3);
-        }
-
-        .back-to-top.show {
-            opacity: 1;
-            visibility: visible;
-        }
-
-        .back-to-top:hover {
-            transform: translateY(-3px) scale(1.1);
-            box-shadow: 0 8px 25px rgba(240, 207, 101, 0.5);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .nav-links {
-                display: none;
-            }
-
-            .writing h1 {
-                font-size: 2.5rem;
-            }
-
-            .writing h2 {
-                font-size: 1.5rem;
-            }
-
-            .materials {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-                padding: 2rem 1rem;
-            }
-
-            .about-content {
-                grid-template-columns: 1fr;
-                gap: 2rem;
-            }
-
-            .footer-content {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .writing h1 {
-                font-size: 2rem;
-            }
-
-            .materials {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 0.8rem;
-                padding: 1.5rem 0.8rem;
-            }
-
-            .btn-group {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            .btn {
-                width: 200px;
-            }
-        }
-
-        @media (min-width: 769px) and (max-width: 1024px) {
-            .materials {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 1.2rem;
-            }
-        }
-    </style>
+    <title>PU B.Tech CSE - Parul University Study Resources</title>
+    <meta name="description" content="Comprehensive study materials and resources for Parul University B.Tech CSE students">
+    <meta name="keywords" content="Parul University, B.Tech CSE, Study Materials, Engineering Resources">
+    <meta name="author" content="Engr Shuvo Das">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
 </head>
 <body>
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
-            <a href="#home" class="navbar-brand">🎓 SemWise</a>
+            <a href="#home" class="navbar-brand">🎓 PU B.Tech CSE</a>
             <ul class="nav-links">
                 <li><a href="#home">🏠 Home</a></li>
                 <li><a href="#materials">📚 Materials</a></li>
@@ -806,10 +28,10 @@
         <div class="container">
             <div class="writing">
                 <p>🚀 Welcome to</p>
-                <h1>SemWise Material</h1>
-                <h2>Engineering Study Resources by <span style="color: #F0CF65;">Engr Shuvo Das</span></h2>
+                <h1>PU B.Tech CSE</h1>
+                <h2>Parul University Study Resources by <span style="color: #F0CF65;">Engr Shuvo Das</span></h2>
                 <p style="font-size: 1.1rem; margin-bottom: 2rem;">
-                    Access comprehensive study materials, notes, and resources for all engineering semesters
+                    Access comprehensive study materials, notes, and resources for all B.Tech CSE semesters at Parul University
                 </p>
                 <div class="btn-group">
                     <a href="#materials" class="btn btn-primary">📖 Explore Materials</a>
@@ -832,52 +54,52 @@
                 <div class="material-box">
                     <a href="https://drive.google.com/drive/folders/18GORLn7PaG6Q3Fq9ayDjIpJ_AXehfeO0?usp=sharing"
                        class="material-card" target="_blank">
-                        <h3>📚 Semester 1</h3>
+                        <h3>🎓 Semester 1</h3>
                         <small>Physics • Chemistry • Math</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="https://drive.google.com/drive/folders/1bgHzMODbkCboDjqmM0oODRPLMe_GRnNN?usp=sharing"
                        class="material-card" target="_blank">
-                        <h3>📚 Semester 2</h3>
+                        <h3>🎓 Semester 2</h3>
                         <small>Engineering Mechanics • BEE</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="https://drive.google.com/drive/folders/1AAZre3ENaaSPSHx2IHzTjOaNpuuGZRN8?usp=sharing"
                        class="material-card" target="_blank">
-                        <h3>📚 Semester 3</h3>
+                        <h3>🎓 Semester 3</h3>
                         <small>Data Structures • Algorithms</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="https://drive.google.com/drive/folders/1_nWprN3wjtpZB8vACenvT3qO3ZFDHZhV"
                        class="material-card" target="_blank">
-                        <h3>📚 Semester 4</h3>
+                        <h3>🎓 Semester 4</h3>
                         <small>Thermodynamics • Fluid Mechanics</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="#" class="material-card">
-                        <h3>📚 Semester 5</h3>
+                        <h3>🎓 Semester 5</h3>
                         <small>Electrical Machines • Power Systems</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="#" class="material-card">
-                        <h3>📚 Semester 6</h3>
+                        <h3>🎓 Semester 6</h3>
                         <small>Digital Systems • Microprocessors</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="#" class="material-card">
-                        <h3>📚 Semester 7</h3>
+                        <h3>🎓 Semester 7</h3>
                         <small>Advanced Topics • Electives</small>
                     </a>
                 </div>
                 <div class="material-box">
                     <a href="#" class="material-card">
-                        <h3>📚 Semester 8</h3>
+                        <h3>🎓 Semester 8</h3>
                         <small>Projects • Final Year</small>
                     </a>
                 </div>
@@ -890,26 +112,28 @@
         <div class="container">
             <div class="about-content">
                 <div class="about-text">
-                    <h2>About SemWise Material</h2>
+                    <h2>About PU B.Tech CSE Resources</h2>
                     <p>
-                        SemWise Material is a comprehensive platform designed to provide engineering students 
+                        PU B.Tech CSE Resources is a comprehensive platform designed to provide Parul University Computer Science & Engineering students 
                         with easy access to high-quality study materials, notes, and resources. Created by 
                         Engr Shuvo Das, a Software Engineer with 8+ years of experience in web development 
-                        and digital solutions.
+                        and digital solutions, currently pursuing B.Tech CSE at Parul University.
                     </p>
                     <ul class="feature-list">
-                        <li>Comprehensive study materials for all semesters</li>
+                        <li>Comprehensive study materials for all 8 semesters</li>
                         <li>Easy download access to Google Drive resources</li>
                         <li>Regularly updated content and materials</li>
                         <li>Mobile-friendly responsive design</li>
-                        <li>Built by experienced software engineer</li>
+                        <li>Built by experienced software engineer & current PU student</li>
+                        <li>Serving students across 80+ countries</li>
                     </ul>
                 </div>
                 <div class="about-image">
-                    <img src="shuvo.png" alt="Engr Shuvo Das" class="about-photo">
+                    <img src="assets/images/shuvo.png" alt="Engr Shuvo Das" class="about-photo">
                     <h3>Created by Engr Shuvo Das</h3>
                     <p style="color: #b0b0b0;">
-                        Software Engineer with 8+ years experience in web development and digital solutions
+                        Software Engineer | B.Tech CSE Student at Parul University<br>
+                        8+ years experience • 150+ websites built • 80+ countries served
                     </p>
                     <div class="social-links">
                         <a href="https://www.linkedin.com/in/engr-shuvo-das-a28085260/" target="_blank" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
@@ -927,12 +151,12 @@
         </div>
     </section>
 
-    <!-- New Footer Design -->
-    <footer class="new-footer">
+    <!-- Footer -->
+    <footer>
         <div class="footer-container">
             <div class="footer-section footer-info">
                 <div class="footer-logo">
-                    <h3>🎓 SemWise Material</h3>
+                    <h3>🎓 PU B.Tech CSE</h3>
                 </div>
                 <p>Dedicated to providing study content for Parul University B.Tech - CSE students.</p>
                 <p>Parul University, P.O.Limda, Ta.Waghodia, Dist.Vadodara - 391760, Gujarat, India</p>
@@ -941,7 +165,7 @@
 
             <div class="footer-section footer-about">
                 <h4>ABOUT US</h4>
-                <p>SemWise Material is your comprehensive resource for engineering study materials, specifically tailored for Parul University B.Tech - CSE students. We aim to support academic success by providing quality educational resources.</p>
+                <p>PU B.Tech CSE Resources is your comprehensive resource for engineering study materials, specifically tailored for Parul University B.Tech - CSE students. Created by Engr Shuvo Das, a current B.Tech CSE student with 8+ years of professional experience.</p>
                 <p>Email: <a href="mailto:engrshuvoda@gmail.com">engrshuvoda@gmail.com</a></p>
                 <p>WhatsApp: <a href="tel:+8801765245872">+880 1765-245872</a></p>
             </div>
@@ -956,12 +180,10 @@
                     <li><a href="https://engrshuvodas.github.io/me/" target="_blank">Portfolio</a></li>
                 </ul>
             </div>
-
-
         </div>
         
-        <div class="footer-bottom-new">
-            <p>&copy; 2024 SemWise Material. All Rights Reserved.</p>
+        <div class="footer-bottom">
+            <p>&copy; 2024 PU B.Tech CSE Resources. All rights reserved.</p>
             <p>Made by <a href="https://engrshuvodas.github.io/me/" target="_blank">Engr Shuvo Das</a> for Parul University B.Tech - CSE Students</p>
         </div>
     </footer>
@@ -969,102 +191,6 @@
     <!-- Back to Top Button -->
     <button class="back-to-top" id="backToTop" onclick="scrollToTop()">↑</button>
 
-    <script>
-        // Navbar scroll effect
-        window.addEventListener('scroll', function() {
-            const navbar = document.getElementById('navbar');
-            const backToTop = document.getElementById('backToTop');
-            
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-                backToTop.classList.add('show');
-            } else {
-                navbar.classList.remove('scrolled');
-                backToTop.classList.remove('show');
-            }
-        });
-
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
-            });
-        });
-
-        // Back to top function
-        function scrollToTop() {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth'
-            });
-        }
-
-        // Add entrance animations on scroll
-        function animateOnScroll() {
-            const elements = document.querySelectorAll('.material-box, .about-text, .about-image');
-            
-            elements.forEach(element => {
-                const rect = element.getBoundingClientRect();
-                const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-                
-                if (isVisible && !element.classList.contains('animated')) {
-                    element.classList.add('animated');
-                    element.style.opacity = '1';
-                    element.style.transform = 'translateY(0)';
-                }
-            });
-        }
-
-        // Initialize animations
-        window.addEventListener('scroll', animateOnScroll);
-        window.addEventListener('load', animateOnScroll);
-
-        // Set initial state for animation
-        document.addEventListener('DOMContentLoaded', function() {
-            const elements = document.querySelectorAll('.material-box, .about-text, .about-image');
-            elements.forEach(element => {
-                element.style.opacity = '0';
-                element.style.transform = 'translateY(30px)';
-                element.style.transition = 'all 0.6s ease';
-            });
-        });
-
-        // Add enhanced 3D hover effect to material cards
-        document.querySelectorAll('.material-card').forEach(card => {
-            card.addEventListener('mousemove', function(e) {
-                const rect = card.getBoundingClientRect();
-                const x = e.clientX - rect.left;
-                const y = e.clientY - rect.top;
-                
-                const centerX = rect.width / 2;
-                const centerY = rect.height / 2;
-                
-                const rotateX = (y - centerY) / 8;
-                const rotateY = (centerX - x) / 8;
-                
-                card.style.transform = `translateZ(30px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.15)`;
-            });
-            
-            card.addEventListener('mouseleave', function() {
-                this.style.transform = 'translateZ(0) rotateX(0) rotateY(0) scale(1)';
-            });
-        });
-
-        // Add loading animation
-        window.addEventListener('load', function() {
-            document.body.style.opacity = '0';
-            setTimeout(() => {
-                document.body.style.transition = 'opacity 0.5s ease';
-                document.body.style.opacity = '1';
-            }, 100);
-        });
-    </script>
+    <script src="js/main.js"></script>
 </body>
 </html>
